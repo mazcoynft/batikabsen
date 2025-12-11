@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Filament\Resources\PengumumanResource\Pages;
+
+use App\Filament\Resources\PengumumanResource;
+use Filament\Actions;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreatePengumuman extends CreateRecord
+{
+    protected static string $resource = PengumumanResource::class;
+    protected static bool $canCreateAnother = false;
+
+    //customize redirect after create
+    public function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+}

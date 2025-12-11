@@ -1,0 +1,62 @@
+/* Dashboard Widget Layout Fix */
+
+/* Prevent widget overlap */
+.fi-dashboard-widgets {
+    display: grid !important;
+    gap: 1rem !important;
+}
+
+/* Stats Overview Widget */
+.fi-wi-stats-overview-widget {
+    margin-bottom: 1rem !important;
+    z-index: 1 !important;
+}
+
+/* Other widgets */
+.fi-widget {
+    margin-bottom: 1rem !important;
+    z-index: 2 !important;
+}
+
+/* Widget sections */
+.fi-section {
+    margin-bottom: 0.5rem !important;
+    overflow: visible !important;
+}
+
+/* Widget headers */
+.fi-section-header {
+    margin-bottom: 0.5rem !important;
+    z-index: 10 !important;
+    position: relative !important;
+}
+
+/* Ensure proper stacking */
+.fi-wi-header,
+.fi-section-header-heading {
+    z-index: 10 !important;
+    position: relative !important;
+    background: white !important;
+}
+
+/* Grid layout for dashboard */
+.fi-dashboard-widgets > div {
+    display: contents !important;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+    .fi-dashboard-widgets {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .fi-dashboard-widgets > div:first-child {
+        grid-column: 1 / -1 !important;
+    }
+    
+    .fi-dashboard-widgets > div:not(:first-child) {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+}
